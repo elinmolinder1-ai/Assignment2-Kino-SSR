@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
   <head>
+    <meta charset="UTF-8">
+    <title>Kino Bio</title>
 
-<link rel="stylesheet" href="/assets/index-CMbYg2GX.css">
-
-
+    <!-- Din egen CSS från public/css -->
+    <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
-    <header class="header">
-      <h1>The Movie Site</h1>
-    </header>
+    
+    <!-- Header-partialen -->
+    {{> header}}
+
+    <!-- Sidans innehåll -->
     <main class="content">
       {{{body}}}
     </main>
-
-<script type="module" src="/assets/index-DH5Lvw_E.js"></script>
-
-  
+ {{> footer}}
+    <!-- Din egen JS från public/js -->
+    <script type="module" src="/js/index.js"></script>
   </body>
 </html>
