@@ -1,0 +1,75 @@
+<header class="header">
+
+
+
+  <!-- Theme toggle -->
+  <div class="header__theme">
+    <button class="header__theme-btn header__theme-btn--light" aria-label="toggle light">
+      <img class="header__theme-icon" src="/images/toggle2-light.png" alt="Light mode icon">
+    </button>
+    <button class="header__theme-btn header__theme-btn--dark" aria-label="toggle dark">
+      <img class="header__theme-icon" src="/images/toggle1-dark.png" alt="Dark mode icon">
+    </button>
+  </div>
+
+  <!-- Top bar -->
+  <div class="header__top">
+    <button class="header__menu-button" aria-label="Menu">☰ MENY</button>
+    <img class="header__logo-dark" src="/images/logo1-dark.png" alt="Logga - Kino bio">
+    <img class="header__logo-light" src="/images/logo2-light.png" alt="Logga - Kino bio">
+
+    <div class="auth-buttons">
+      <button class="header__member-btn" aria-label="Logga in">Member</button>
+      <button class="header__login-btn" aria-label="Logga in">JOIN / LOGIN</button>
+      <button class="open-register">Registrera dig</button>
+    </div>
+  </div>
+
+  <!-- Dynamisk meny -->
+  <nav class="header__nav">
+    <button class="header__nav-close" aria-label="Stäng menyn">
+      ✕ <span class="close-menu">MENY</span>
+    </button>
+
+    <ul class="header__nav-list">
+      {{#each menu}}
+        <li class="header__nav-item" id="{{id}}">
+          <a href="{{link}}">{{label}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </nav>
+
+  <!-- Login modal -->
+  <div class="login">
+    <div class="login__modal">
+      <div class="login__content">
+        <button class="login__close" aria-label="Stäng">✕</button>
+        <h2 class="login__title">Logga in</h2>
+        <form class="login__form">
+          <input class="login__input" type="email" placeholder="E-post" name="email" required>
+          <input class="login__input" type="password" placeholder="Lösenord" name="password" required>
+          <a href="#" class="login__forgot">Glömt lösenord?</a>
+          <button class="login__submit" type="submit">Logga in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register modal -->
+  <div class="register">
+    <div class="register__modal">
+      <div class="register__content">
+        <button class="register__close" aria-label="Stäng">✕</button>
+        <h2 class="register__title">Registrera dig</h2>
+        <form class="register__form">
+          <input class="register__input" type="text" placeholder="Namn" name="username" required>
+          <input class="register__input" type="email" placeholder="E-post" name="email" required>
+          <input class="register__input" type="password" placeholder="Lösenord" name="password" required>
+          <button class="register__submit" type="submit">Skapa konto</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</header>
