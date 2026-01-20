@@ -11,11 +11,6 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Statisk serving
-app.use(express.static(path.join(process.cwd(), "dist")));
-app.use(express.static(path.join(process.cwd(), "public")));
-app.use("/scripts", express.static(path.join(process.cwd(), "scripts")));
-
 // Handlebars setup
 app.engine("handlebars", engine({
   defaultLayout: "main",
@@ -34,7 +29,7 @@ const MENU = [
   { label: "Café & Bistro", id: "cafe", link: "/#cafe-bistro" },
   { label: "Event", id: "events", link: "/events" },
   { label: "Kundservice", id: "support", link: "/support" },
-  { label: "Mina sidor", id: "profile", link: "/profile" },
+  { label: "Mina sidor", id: "profile", link: "/member-page" },
   { label: "Företag", id: "business", link: "/business" }
 ];
 
@@ -47,17 +42,26 @@ app.get("/", async (req, res) => {
   res.render("home", { movies, menu: MENU });
 });
 
+app.get("/member-page", (req, res) => {
+  res.render("member-page", { menu: MENU });
+});
+
+
 app.get("/movies", async (req, res) => {
   const movies = await loadMovies();
   res.render("home", { movies, menu: MENU });
 });
-
 
 // Enskild film
 app.get("/movies/:movieId", async (req, res) => {
   const movie = await loadMovie(req.params.movieId);
   res.render("movie", { movie, menu: MENU });
 });
+
+// Statisk serving
+app.use(express.static(path.join(process.cwd(), "dist")));
+app.use(express.static(path.join(process.cwd(), "public")));
+app.use("/scripts", express.static(path.join(process.cwd(), "scripts")));
 
 // Starta servern
 app.listen(5080, () => {
