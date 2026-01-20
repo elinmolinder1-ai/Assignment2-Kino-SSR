@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "sass-watch": "sass --watch src/main.scss:css/main.css",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
