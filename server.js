@@ -38,18 +38,20 @@ const MENU = [
   { label: "Företag", id: "business", link: "/business" }
 ];
 
+// Routes
 
 // Startsidan
 app.get("/", async (req, res) => {
   const movies = await loadMovies();
+  console.log(movies);
   res.render("home", { movies, menu: MENU });
 });
 
-// Alla filmer
 app.get("/movies", async (req, res) => {
   const movies = await loadMovies();
-  res.render("movies", { movies, menu: MENU });
+  res.render("home", { movies, menu: MENU });
 });
+
 
 // Enskild film
 app.get("/movies/:movieId", async (req, res) => {
