@@ -10,11 +10,7 @@ export function toggleLogin() {
     e.preventDefault();
     modal.style.display = "flex";
   });
-          /*if (!openBtn) return;
-       openBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location.href = "member-page.html";
-  });*/
+
     const closeBtn = document.querySelector('.login__close');
     const submit = document.querySelector('.login__submit');
 
@@ -35,6 +31,6 @@ export function toggleLogin() {
 
     submit.addEventListener('click', (event) => {
         event.preventDefault();
-        window.location.href = "member-page.html"; 
+        window.location.href = "/member-page"; 
     });
 }

@@ -8,7 +8,7 @@ export function initMemberButtons() {
     memberBtn.addEventListener("click", (e) => {
       e.preventDefault();
       localStorage.setItem("isMember", "true");
-      window.location.href = "/member-page.html";
+      window.location.href = "/member-page";
     });
   }
 
