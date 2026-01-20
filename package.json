@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "sass-watch": "sass --watch src/main.scss:css/main.css",
+    "sass-watch": "sass --watch src/sections/main.scss public/css/main.css",
     "start": "node server.js",
     "prepare": "husky",
     "test": "jest"
