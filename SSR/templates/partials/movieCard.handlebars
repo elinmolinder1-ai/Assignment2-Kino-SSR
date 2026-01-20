@@ -1,0 +1,8 @@
+<div class="movie-card ">
+  <h3 class="movie-card__title">{{attributes.title}}</h3>
+
+  {{#if attributes.image}}
+    <img src="{{attributes.image.url}}" alt="Poster for {{attributes.title}}" class="movie-card__image">
+  {{/if}}
+  <a href="/movies/{{id}}" class="movie-card__link">Mer info</a>
+</div>
