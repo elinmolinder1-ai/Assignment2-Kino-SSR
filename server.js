@@ -11,6 +11,9 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+// Startsidan: alltid public/index.html
+app.get("/", (req, res) => { res.sendFile(path.join(__dirname, "public", "index.html")); });
+
 // Handlebars setup
 app.engine("handlebars", engine({
   defaultLayout: "main",
@@ -23,6 +26,7 @@ app.set("views", path.join(__dirname, "SSR/templates"));
 
 // Meny-array
 const MENU = [
+  { label: "Startsida", id: "movies", link: "/" },
   { label: "Alla filmer", id: "movies", link: "/movies" },
   { label: "Barnbio", id: "kids", link: "/kids" },
   { label: "Presentkort", id: "gift", link: "/gift" },
@@ -36,16 +40,11 @@ const MENU = [
 // Routes
 
 // Startsidan
-app.get("/", async (req, res) => {
+/* app.get("/", async (req, res) => {
   const movies = await loadMovies();
   console.log(movies);
   res.render("home", { movies, menu: MENU });
-});
-
-app.get("/member-page", (req, res) => {
-  res.render("member-page", { menu: MENU });
-});
-
+}); */
 
 app.get("/movies", async (req, res) => {
   const movies = await loadMovies();
@@ -57,6 +56,12 @@ app.get("/movies/:movieId", async (req, res) => {
   const movie = await loadMovie(req.params.movieId);
   res.render("movie", { movie, menu: MENU });
 });
+
+app.get("/member-page", (req, res) => {
+  res.render("member-page", { menu: MENU });
+});
+
+
 
 // Statisk serving
 app.use(express.static(path.join(process.cwd(), "dist")));
