@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <title>Kino Bio</title>
+
+    <!-- Din egen CSS från public/css -->
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    
+    <!-- Header-partialen -->
+    {{> header}}
+
+    <!-- Sidans innehåll -->
+    <main class="content">
+      {{{body}}}
+    </main>
+ {{> footer}}
+    <!-- Din egen JS från public/js -->
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>
