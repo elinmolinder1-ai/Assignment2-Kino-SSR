@@ -1,0 +1,121 @@
+@use '../lib/variables_mixins' as *;
+
+// movies.scss
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.movie-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &__image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem;
+    color: #333;
+  }
+
+  &__intro {
+    flex-grow: 1;
+    margin: 0 1rem 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  &__link {
+    display: block;
+    text-align: center;
+    background: $dark-button;
+    color: #fff;
+    padding: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-top: 1px solid #eee;
+
+    &:hover {
+      background: $dark-red-bg;
+    }
+  }
+}
+
+
+.movie-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+  &__image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem;
+    color: #333;
+  }
+
+  &__intro {
+    flex-grow: 1;
+    margin: 0 1rem 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  &__link {
+    display: block;
+    text-align: center;
+    background: $dark-button;
+    color: #fff;
+    padding: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-top: 1px solid #eee;
+
+    &:hover {
+      background: $dark-red-bg;
+    }
+  }
+
+  // Modifierare
+  &--special {
+    width:600px;
+    background: #f9f9f9;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:20px;
+
+    .movie-card__title {
+      color: #af1111;
+      font-size: 1.9rem;
+    }
+
+    .movie-card__image {
+      width: 100%; 
+      height: auto;
+    }
+  }
+}

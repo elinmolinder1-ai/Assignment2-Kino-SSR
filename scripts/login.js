@@ -1,3 +1,5 @@
+console.log("login.js körs!");
+
 export function toggleLogin() {
     const modal = document.querySelector('.login__modal');
     const openBtn = document.querySelector('.header__login-btn');

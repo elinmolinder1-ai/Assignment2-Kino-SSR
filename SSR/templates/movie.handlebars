@@ -1,0 +1,12 @@
+<div class="movie-card movie-card--special">
+  <h1 class="movie-card__title">{{movie.attributes.title}}</h1>
+  <div class="movie-card__intro">
+    {{{movie.attributes.intro}}}
+  </div>
+  {{#if movie.attributes.image}}
+    <img src="{{movie.attributes.image.url}}" 
+         alt="Poster for {{movie.attributes.title}}" 
+         class="movie-card__image">
+  {{/if}}
+  <a href="/movies" class="movie-card__link">Tillbaka till alla filmer</a>
+</div>
