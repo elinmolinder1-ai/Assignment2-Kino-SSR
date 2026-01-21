@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const app = express();
+export const app = express();
 
 // Startsidan: alltid public/index.html
 app.get("/", (req, res) => { res.sendFile(path.join(__dirname, "public", "index.html")); });
@@ -69,6 +69,6 @@ app.use(express.static(path.join(process.cwd(), "public")));
 app.use("/scripts", express.static(path.join(process.cwd(), "scripts")));
 
 // Starta servern
-app.listen(5080, () => {
+export const server = app.listen(5080, () => {
   console.log("Servern kör på http://localhost:5080");
 });
