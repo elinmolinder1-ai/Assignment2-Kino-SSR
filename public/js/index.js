@@ -1,6 +1,6 @@
 // index.js
 
-// UI-funktioner
+// UI-functions that controls parts of the user interface.
 import { initMemberPage, initMemberButtons } from '../../scripts/member-page.js';
 import { toggleLogin } from '../../scripts/login.js';
 import { toggleRegister } from '../../scripts/register.js';
@@ -8,18 +8,20 @@ import { toggleMenu } from '../../scripts/menu.js';
 import { closeNotice } from '../../scripts/notice.js';
 import { toggleTheme } from '../../scripts/tema.js';
 
-// Filmrelaterade funktioner
 import { fetchMovies } from "../../scripts/api.js";
 import { renderMovieList } from "../../scripts/createcard.js";
 //import { openTrailer } from "../../scripts/trailermodal.js"; 
 import { movieCarousel } from "../../scripts/carousel.js"; 
 
+
+//function for date, creates a date-object
 function parseDate(dateStr) {
   if (!dateStr) return null;
   const d = new Date(dateStr);
   return Number.isNaN(d.getTime()) ? null : d;
 }
 
+//Checks if a movie is upcoming
 function isUpcoming(movie) {
   const d = parseDate(movie.Show_Date);
   if (!d) return false;
